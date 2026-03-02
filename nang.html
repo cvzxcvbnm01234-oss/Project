@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>จังหวัดน่าน</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#0f0f0f;
+    color:white;
+    scroll-behavior:smooth;
+}
+
+header{
+    height:100vh;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/Nan_Province_Thailand.jpg') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+header h1{
+    font-size:60px;
+    background:rgba(0,0,0,0.6);
+    padding:20px 40px;
+    border-radius:10px;
+}
+
+section{
+    padding:60px 10%;
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+}
+
+.card{
+    background:#1c1c1c;
+    width:300px;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.5s;
+    opacity:0;
+    transform:translateY(50px);
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:15px;
+}
+
+.card p{
+    margin:0 15px 20px;
+    color:#ccc;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00bfff;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#000;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>จังหวัดน่าน</h1>
+    <p>เมืองเล็กกลางหุบเขา เงียบสงบ และงดงาม</p>
+</header>
+
+<section>
+
+<div class="card">
+<img src="c:\Users\cvzxc\Downloads\IMG_3135.jpg">
+<h3>วัดภูมินทร์</h3>
+<p>วัดชื่อดังของน่าน ภาพจิตรกรรม “กระซิบรัก” อันโด่งดัง</p>
+</div>
+
+<div class="card">
+<img src="c:\Users\cvzxc\Downloads\s_135547_5558.jpg">
+<h3>ดอยเสมอดาว</h3>
+<p>จุดชมทะเลหมอกและดูดาวที่สวยที่สุดแห่งหนึ่งในไทย</p>
+</div>
+
+<div class="card">
+<img src="c:\Users\cvzxc\Downloads\ahr0chm6ly9zlmlzyw5vb2suy29tl_3.jpg">
+<h3>บ่อเกลือ</h3>
+<p>แหล่งผลิตเกลือสินเธาว์บนภูเขาแห่งเดียวในประเทศ</p>
+</div>
+
+</section>
+
+<footer>
+จัดทำโดย : เดชพีระพัฒน์ ศิรประภา ชนัญชิดา
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', ()=>{
+    cards.forEach(card=>{
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < window.innerHeight - 100){
+            card.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

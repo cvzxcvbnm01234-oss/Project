@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>จังหวัดแพร่</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    color:white;
+    text-align:center;
+}
+
+header{
+    height:100vh;
+    background:url('https://upload.wikimedia.org/wikipedia/commons/4/4a/Wat_Phra_That_Cho_Hae_Phrae.jpg') center/cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+header h1{
+    font-size:55px;
+    background:rgba(0,0,0,0.6);
+    padding:20px 40px;
+    border-radius:15px;
+}
+
+section{
+    padding:50px 10%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.5s;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:15px;
+}
+
+.card p{
+    margin:0 15px 20px;
+    color:#ccc;
+}
+
+.card:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px #00bfff;
+}
+
+footer{
+    background:#000;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>จังหวัดแพร่</h1>
+<p>เมืองเก่า เสน่ห์ล้านนา และธรรมชาติสงบงาม</p>
+</header>
+
+<section>
+
+<div class="card">
+<img src="c:\Users\cvzxc\Downloads\565000000016401.jpg">
+<h3>วัดพระธาตุช่อแฮ</h3>
+<p>พระธาตุประจำปีขาล สถานที่ศักดิ์สิทธิ์คู่เมืองแพร่</p>
+</div>
+
+<div class="card">
+<img src="c:\Users\cvzxc\Downloads\Day2-2.jpg">
+<h3>แพะเมืองผี</h3>
+<p>เสาดินธรรมชาติรูปร่างแปลกตา คล้ายแกรนด์แคนยอนขนาดย่อม</p>
+</div>
+
+<div class="card">
+<img src="c:\Users\cvzxc\Downloads\images (1).jpg">
+<h3>คุ้มเจ้าหลวง</h3>
+<p>อาคารไม้สักเก่าแก่ สถาปัตยกรรมล้านนาโบราณ</p>
+</div>
+
+<div class="card">
+<img src="c:\Users\cvzxc\Downloads\20171023ebfdabe017fea48b1031e383f917d03c010643.jpg">
+<h3>อุทยานแห่งชาติดอยผากลอง</h3>
+<p>ธรรมชาติป่าเขา จุดชมวิวสวยงาม</p>
+</div>
+
+</section>
+
+<footer>
+จัดทำโดย: เดชพีระพัฒน์ ศิรประภา ชนัญชิดา
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', ()=>{
+    cards.forEach(card=>{
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < window.innerHeight - 100){
+            card.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

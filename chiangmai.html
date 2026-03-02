@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Chiang Mai | Northern Thailand</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    transition:0.4s;
+    background:#f4f4f4;
+}
+
+/* Navbar */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#111;
+    color:white;
+    position:fixed;
+    width:100%;
+    z-index:1000;
+}
+
+nav button{
+    padding:8px 12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#444;
+    color:white;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:url("https://upload.wikimedia.org/wikipedia/commons/9/9a/Wat_Phra_That_Doi_Suthep.jpg") no-repeat center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    text-shadow:0 0 15px black;
+}
+
+.hero h1{
+    font-size:60px;
+    margin:0;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+/* Content */
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:100px 20px 50px;
+}
+
+.section{
+    margin-bottom:60px;
+}
+
+/* Image */
+.section img{
+    width:100%;
+    border-radius:15px;
+    margin:20px 0;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Scroll Animation */
+.reveal{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Map */
+.map{
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:white;
+}
+
+/* Dark Mode */
+.dark{
+    background:#111;
+    color:white;
+}
+
+.dark footer{
+    background:#000;
+}
+
+.dark nav{
+    background:#000;
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <h2>🌄 Chiang Mai</h2>
+    <button onclick="toggleDark()">🌙</button>
+</nav>
+
+<section class="hero">
+    <h1>เชียงใหม่</h1>
+    <p>มนต์เสน่ห์แห่งล้านนา</p>
+</section>
+
+<div class="container">
+
+    <div class="section reveal">
+        <h2>ดอยสุเทพ</h2>
+        <img src="c:\Users\cvzxc\Downloads\03_wat-phra-that-doi-suthep-travel-guide.jpg">
+        <p>วัดพระธาตุดอยสุเทพเป็นสถานที่ศักดิ์สิทธิ์คู่เมืองเชียงใหม่ 
+        สามารถชมวิวเมืองได้อย่างสวยงาม โดยเฉพาะช่วงเย็น</p>
+    </div>
+
+    <div class="section reveal">
+        <h2>ดอยอินทนนท์</h2>
+        <img src="c:\Users\cvzxc\Downloads\4-3_1.jpg">
+        <p>ยอดดอยที่สูงที่สุดในประเทศไทย อากาศเย็นตลอดปี 
+        เหมาะสำหรับชมทะเลหมอกและธรรมชาติ</p>
+    </div>
+
+    <div class="section reveal">
+        <h2>ไนท์บาซาร์</h2>
+        <img src="c:\Users\cvzxc\Downloads\P06002139.jpeg">
+        <p>ตลาดกลางคืนยอดนิยม มีของฝาก งานฝีมือ และอาหารพื้นเมือง</p>
+    </div>
+
+    <div class="section reveal">
+        <h2>แผนที่เชียงใหม่</h2>
+        <div class="map">
+            <iframe 
+                src="https://www.google.com/maps?q=Chiang+Mai+Thailand&output=embed"
+                width="100%" 
+                height="400" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    จัดทำโดย: เดชพีระพัฒน์ ศิรประภา ชนัญชิดา
+</footer>
+
+<script>
+// Scroll Reveal
+window.addEventListener("scroll", function(){
+    const reveals = document.querySelectorAll(".reveal");
+    for(let i=0;i<reveals.length;i++){
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        if(elementTop < windowHeight - 100){
+            reveals[i].classList.add("active");
+        }
+    }
+});
+
+// Dark Mode
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body><!-- Loading Screen -->
+<div id="loader">
+    <div class="spinner"></div>
+    <h2>กำลังเข้าสู่เชียงใหม่...</h2>
+</div>
+</html>
